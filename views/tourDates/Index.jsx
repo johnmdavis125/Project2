@@ -18,6 +18,10 @@ class Index extends React.Component {
                                     {tourDate.date}<br/>
                                     {tourDate.venue}<br/>
                                     {tourDate.city}<br/>
+
+                                    {/* Delete form */}
+
+                                    <a href={`/tourDates/${tourDate._id}/edit`}>Edit</a>
                                 </li>
                                 </>
                             )

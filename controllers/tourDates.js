@@ -21,7 +21,13 @@ router.get('/new', (req, res)=>{
 
 // Delete (delete Override POST)
 
-// Update (POST Override PUT)
+// Update (PUT override POST)
+router.put('/:id', (req, res)=>{
+    TourDate.findByIdAndUpdate(req.params.id, req.body, {new: true}, (error, updatedModel)=>{
+        res.redirect('/tourDates'); 
+    });
+});
+
 
 // Create (POST)
 router.post('/', (req, res)=>{
@@ -31,6 +37,13 @@ router.post('/', (req, res)=>{
 });
 
 // Edit (GET)
+router.get('/:id/edit', (req, res)=>{
+    TourDate.findById(req.params.id, (error, foundTourDate)=>{
+        res.render('tourDates/Edit', {
+            tourDate: foundTourDate
+        });
+    });
+});
 
 // Show (GET)
 
