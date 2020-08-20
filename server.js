@@ -12,7 +12,8 @@ const PORT = process.env.PORT || 3000;
 // Middleware
 app.use(express.static('public')); 
 app.use(express.urlencoded({extended: false})); 
-app.set('jsx', require('express-react-views').createEngine()); 
+app.set('view engine', 'jsx'); 
+app.engine('jsx', require('express-react-views').createEngine()); 
 app.use(methodOverride('_method')); 
 
 // Mongo Cxn
@@ -29,8 +30,8 @@ app.use('/tourDates', tourDatesController);
 
 
 // Default route:
-app.get("/", (req, res) => {
-    res.redirect("/tourDates");
+app.get('/', (req, res) => {
+    res.redirect('/tourDates');
   });
 
 // Listen
