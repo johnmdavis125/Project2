@@ -27,6 +27,12 @@ mongoose.connection.once('open', ()=>{
 const tourDatesController = require('./controllers/tourDates.js'); 
 app.use('/tourDates', tourDatesController); 
 
+
+// Default route:
+app.get("/", (req, res) => {
+    res.redirect("/tourDates");
+  });
+
 // Listen
 app.listen(PORT, ()=>{
     console.log(`listening on port ${PORT}`);
