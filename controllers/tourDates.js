@@ -33,7 +33,6 @@ router.put('/:id', (req, res)=>{
     });
 });
 
-
 // Create (POST)
 router.post('/', (req, res)=>{
     TourDate.create(req.body, (error, createdTourDate)=>{
@@ -51,6 +50,12 @@ router.get('/:id/edit', (req, res)=>{
 });
 
 // Show (GET)
-
+router.get('/:id', (req, res)=>{
+    TourDate.findById(req.params.id, req.body, (error, foundTourDate)=>{
+        res.render('tourDates/Show', {
+            tourDate: foundTourDate
+        });
+    });
+});
 
 module.exports = router; 

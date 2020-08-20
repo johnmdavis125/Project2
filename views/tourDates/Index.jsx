@@ -15,7 +15,7 @@ class Index extends React.Component {
                                 <>
                                 <img src={tourDate.img}/><br/>
                                 <li>
-                                    {tourDate.date}<br/>
+                                    <a href={`tourDates/${tourDate._id}`}>{tourDate.date}</a><br/>
                                     {tourDate.venue}<br/>
                                     {tourDate.city}<br/>
 
