@@ -20,6 +20,11 @@ router.get('/new', (req, res)=>{
 });
 
 // Delete (delete Override POST)
+router.delete('/:id', (req, res)=>{
+    TourDate.findByIdAndDelete(req.params.id, (error, foundTourDate)=>{
+        res.redirect('/tourDates'); 
+    });
+});
 
 // Update (PUT override POST)
 router.put('/:id', (req, res)=>{

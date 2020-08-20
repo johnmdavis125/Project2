@@ -19,7 +19,9 @@ class Index extends React.Component {
                                     {tourDate.venue}<br/>
                                     {tourDate.city}<br/>
 
-                                    {/* Delete form */}
+                                    <form action={`/tourDates/${tourDate._id}?_method=DELETE`} method='POST'>
+                                        <input type='submit' value='Delete Entry'/>
+                                    </form>
 
                                     <a href={`/tourDates/${tourDate._id}/edit`}>Edit</a>
                                 </li>
