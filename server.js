@@ -31,10 +31,13 @@ app.use('/tourDates', tourDatesController);
 const mainPicsController = require('./controllers/mainPics.js'); 
 app.use('/mainPics', mainPicsController); 
 
+const albumsController = require('./controllers/albums.js'); 
+app.use('/albums', albumsController); 
+
 
 // Default route:
 app.get('/', (req, res) => {
-    res.redirect('/mainPics');
+    res.redirect('/albums');
   });
 
 // Listen

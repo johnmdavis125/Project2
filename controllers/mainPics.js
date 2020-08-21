@@ -1,7 +1,7 @@
 const express = require('express'); 
 const router = express.Router(); 
 const MainPic = require('../models/mainPicsModel.js');
-const { route } = require('./tourDates.js');
+
 
 // RESTful Routes
 // Index (GET)
