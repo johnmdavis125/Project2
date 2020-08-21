@@ -28,10 +28,13 @@ mongoose.connection.once('open', ()=>{
 const tourDatesController = require('./controllers/tourDates.js'); 
 app.use('/tourDates', tourDatesController); 
 
+const mainPicsController = require('./controllers/mainPics.js'); 
+app.use('/mainPics', mainPicsController); 
+
 
 // Default route:
 app.get('/', (req, res) => {
-    res.redirect('/tourDates');
+    res.redirect('/mainPics');
   });
 
 // Listen
