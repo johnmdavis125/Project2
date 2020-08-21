@@ -37,7 +37,7 @@ app.use('/albums', albumsController);
 
 // Default route:
 app.get('/', (req, res) => {
-    res.redirect('/albums');
+    res.redirect('/mainPics');
   });
 
 // Listen
