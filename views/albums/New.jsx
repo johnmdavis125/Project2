@@ -62,7 +62,7 @@ class New extends React.Component {
                 <lable for='song10length'>Song 10 Length</lable>
                 <input class='song10length' type='text' name='song10length'/><br/>
 
-
+                <input class='submitButton' type='submit' name='' value='Create Album'/>
 
                 </form>
             </div>

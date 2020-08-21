@@ -19,18 +19,36 @@ router.get('/new', (req, res)=>{
 });
 
 // Delete (DELETE override POST)
-
+router.delete('/:id', (req, res)=>{
+    Album.findByIdAndDelete(req.params.id, (error, foundAlbum)=>{
+        res.redirect('/albums'); 
+    });
+});
 
 // Update (PUT override POST)
-
+router.put('/:id', (req, res)=>{
+    Album.findByIdAndUpdate(req.params.id, req.body, {new: true}, (error, updatedModel)=>{
+        res.redirect('/albums'); 
+    });
+});
 
 // Create (POST)
-
+router.post('/', (req, res)=>{
+    Album.create(req.body, (error, createdAlbum)=>{
+        res.redirect('/albums'); 
+    });
+});
 
 // Edit (GET)
-
+router.get('/:id/edit', (req, res)=>{
+    Album.findById(req.params.id, (error, foundAlbum)=>{
+        res.render('albums/Edit', {
+            album: foundAlbum
+        });
+    });
+});
 
 // Show (GET)
-
+    // N/A
 
 module.exports = router; 
