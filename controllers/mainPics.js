@@ -1,7 +1,7 @@
 const express = require('express'); 
 const router = express.Router(); 
-const mainPic = require('../models/mainPicsModel.js'); 
 const MainPic = require('../models/mainPicsModel.js');
+const { route } = require('./tourDates.js');
 
 // RESTful Routes
 // Index (GET)
@@ -19,8 +19,14 @@ router.get('/new', (req, res)=>{
 }); 
 
 // Delete (delete override post)
+router.delete('/:id', (req, res)=>{
+    MainPic.findByIdAndDelete(req.params.id, (error, foundMainPic)=>{
+        res.redirect('/mainPics'); 
+    });
+});
 
 // Update (put override post)
+    // N/A
 
 // Create (post)
 router.post('/', (req, res)=>{
@@ -29,9 +35,10 @@ router.post('/', (req, res)=>{
     });
 });
 
-
 // Edit (GET)
+    // N/A
 
 // Show (GET)
+    // N/A
 
 module.exports = router; 
