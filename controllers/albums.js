@@ -1,15 +1,22 @@
 const express = require('express'); 
+const Album = require('../models/albumsModel');
 const router = express.Router(); 
 // const Album = require('..models/albumsModel.js'); 
 
 // RESTful Routes
 // Index (GET)
 router.get('/', (req, res)=>{
-    res.send('Hello World from the albums Index Page!'); 
+    Album.find({}, (error, allAlbums)=>{
+        res.render('albums/Index', {
+            albums: allAlbums
+        });
+    });
 });
 
 // New (GET)
-
+router.get('/new', (req, res)=>{
+    res.render('albums/New'); 
+});
 
 // Delete (DELETE override POST)
 
