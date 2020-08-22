@@ -1,30 +1,34 @@
 const React = require('react'); 
 const Layout = require('../components/Layout.jsx'); 
 const Header = require('../components/Header.jsx'); 
+const Carousel = require('../components/Carousel.jsx'); 
+// Carousel
+let currentImgIndex = 0; // iterates with each 'create'
+// let highestIndex = imgArray.length -1; 
 
+// Data to pass into Header
 const headerTitle = 'Your Band Name Here';
 const headerSubTitle = 'Optional Sub-text Here';
-// const headerText = '';
 
 class Index extends React.Component {
     render(){
         const { mainPics } = this.props; 
-        // img 
+        // console.log(mainPics);      
+
         return (
             <Layout>
             <Header 
             title={headerTitle}
             subTitle={headerSubTitle}
-            // subText={headerText}
-            >
-            </Header>
+            ></Header>
+            <Carousel>
             <div>
-            <a href='/mainPics/new'>Add Pictures</a>
+            <a href='/mainPics/new'>Add Pictures</a>           
             <ul>
                 {
                     mainPics.map((mainPic, i)=>{
                         return (
-                            <div>
+                            <div key={i}>
                                 <img src={mainPic.img}/><br/>
 
                                 <form action={`/mainPics/${mainPic._id}?_method=DELETE`} method='POST'>
@@ -37,9 +41,12 @@ class Index extends React.Component {
                 }
                 </ul>
             </div>
+            </Carousel>
             </Layout>
         )
     }
 }
+
+
 
 module.exports = Index; 
