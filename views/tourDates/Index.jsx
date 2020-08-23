@@ -1,36 +1,46 @@
 const React = require('react'); 
+const Layout = require('../components/Layout.jsx'); 
+const Header = require('../components/Header.jsx'); 
+
+const headerTitle = 'Upcoming Tour Dates';
 
 class Index extends React.Component {
     render(){
         const { tourDates } = this.props; 
         // date, city, venue, img
         return (
-            <div>
-                <h1>This is the tourDates Index Page</h1>
-                <a href='/tourDates/new'>Add a New Tour Date Here</a>
-                <ul>
+            <Layout>
+            <Header
+            title={headerTitle}
+            ></Header>
+            <div class='d-flex flex-column align-items-center'>              
                     {
                         tourDates.map((tourDate, i)=>{
                             return (
-                                <>
-                                <img src={tourDate.img}/><br/>
-                                <li>
-                                    <a href={`tourDates/${tourDate._id}`}>{tourDate.date}</a><br/>
-                                    {tourDate.venue}<br/>
-                                    {tourDate.city}<br/>
+                                <div class='card text-center' style={{minWidth: '300px', width: '40%', margin: '5px auto 0 auto', backgroundColor: 'black'}}>
+                                <img class='card-img-top' src={tourDate.img}/>
+                                {/* <div class='card-img-top' style={{backgroundImage: `url(${tourDate.img}`}}>{tourDate.date}</div> */}
+                                <div class='card-body' style={{backgroundColor: 'black'}}>
+                                    <a class='card-title btn btn-dark btn-sm' href={`tourDates/${tourDate._id}`}>{tourDate.date}</a><br/>
+                                    {/* {tourDate.venue}<br/>
+                                    {tourDate.city}<br/> */}
 
-                                    <form action={`/tourDates/${tourDate._id}?_method=DELETE`} method='POST'>
+                                    
+
+                                    {/* <form action={`/tourDates/${tourDate._id}?_method=DELETE`} method='POST'>
                                         <input type='submit' value='Delete Entry'/>
-                                    </form>
+                                    </form> */}
 
-                                    <a href={`/tourDates/${tourDate._id}/edit`}>Edit</a>
-                                </li>
-                                </>
+                                    {/* <a href={`/tourDates/${tourDate._id}/edit`}>Edit</a> */}
+                                </div>
+                                </div>
                             )
                         })                        
                     }
-                </ul>
+                <a href='/tourDates/new'>Add New Date</a>
             </div>
+            
+            </Layout>
         )
     }
 }

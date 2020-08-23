@@ -4,6 +4,7 @@ const headerStyle = {
   backgroundImage: `url('../images/header.jpeg')`, 
   backgroundSize: 'cover',
   color: 'white',
+  textShadow: '2px 2px rgb(46,42,42)',
   margin: '0',
   padding: '5% 0 100px 0'
 }

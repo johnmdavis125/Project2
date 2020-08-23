@@ -1,14 +1,14 @@
 const React = require('react'); 
 const Layout = require('../components/Layout.jsx'); 
 const Header = require('../components/Header.jsx'); 
-const Carousel = require('../components/Carousel.jsx'); 
+
 // Carousel
 let currentImgIndex = 0; // iterates with each 'create'
 // let highestIndex = imgArray.length -1; 
 
 // Data to pass into Header
-const headerTitle = 'Your Band Name Here';
-const headerSubTitle = 'Optional Sub-text Here';
+const headerTitle = 'Welcome to Band Builder';
+const headerSubTitle = 'Customize - Share - Rock On';
 let imageCounter = 0; 
 
 class Index extends React.Component {

@@ -1,13 +1,22 @@
 const React = require('react'); 
+const Layout = require('../components/Layout.jsx'); 
+const Header = require('../components/Header.jsx'); 
+
+const headerTitle = 'Albums Index Page'
 
 class Index extends React.Component {
     render(){
         const { albums } = this.props; 
         // albumTitle, img, song1title (thru 10), song1length (thru 10);
         return (
+        <Layout>
+        <Header
+        title={headerTitle}
+        ></Header> 
         <div>
-            <h1>albums Index Page</h1>
-            <a href='/albums/new'>Add New Song Info!</a>
+            {/* <h1>albums Index Page</h1> */}
+            {/* <a href='/albums/new'>Add New Song Info!</a> */}
+               
             <ul>
                 {
                     albums.map((album, i)=>{
@@ -26,6 +35,7 @@ class Index extends React.Component {
                                     {album.song8title}{album.song8length}<br/>
                                     {album.song9title}{album.song9length}<br/>
                                     {album.song10title}{album.song10length}<br/>
+                                    <a href='/albums/new'>Add New Album!</a>
 
                                     <form action={`/albums/${album._id}?_method=DELETE`} method='POST'>
                                         <input type='submit' value='Delete Album'/>
@@ -41,6 +51,7 @@ class Index extends React.Component {
 
             </ul>
         </div>
+        </Layout>
         )
     }
 }
