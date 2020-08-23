@@ -29,9 +29,18 @@ router.delete('/:id', (req, res)=>{
     // N/A
 
 // Create (post)
+let imageCount = 0;
 router.post('/', (req, res)=>{
     MainPic.create(req.body, (error, createdMainPic)=>{
         res.redirect('/mainPics'); 
+        console.log('hello hi'); 
+        
+        const addByOne = ()=>{
+        imageCount += 1; 
+        console.log(`this is imageCount ${imageCount}`);     
+        }
+        
+        addByOne(); 
     });
 });
 

@@ -9,11 +9,18 @@ let currentImgIndex = 0; // iterates with each 'create'
 // Data to pass into Header
 const headerTitle = 'Your Band Name Here';
 const headerSubTitle = 'Optional Sub-text Here';
+let imageCounter = 0; 
 
 class Index extends React.Component {
     render(){
         const { mainPics } = this.props; 
-        // console.log(mainPics);      
+        console.log(mainPics);      
+
+        imageCounter = 0; 
+        // $(()=>{
+        // console.log($); 
+        // console.log('hello world'); 
+        // })
 
         return (
             <Layout>
@@ -21,27 +28,39 @@ class Index extends React.Component {
             title={headerTitle}
             subTitle={headerSubTitle}
             ></Header>
-            <Carousel>
-            <div>
-            <a href='/mainPics/new'>Add Pictures</a>           
-            <ul>
-                {
-                    mainPics.map((mainPic, i)=>{
-                        return (
-                            <div key={i}>
-                                <img src={mainPic.img}/><br/>
+            <div className='carousel-container'>
+            <a href='/mainPics/new'>Add Pictures</a>
 
-                                <form action={`/mainPics/${mainPic._id}?_method=DELETE`} method='POST'>
-                                    <input type='submit' value='Delete image'/>
-                                </form>
+                <div className='carousel-button previous'>
+                    <span className='carousel-control-prev-icon'></span>
+                </div>
 
-                            </div>
-                        )
-                    })
-                }
-                </ul>
+                <div className='carousel-images'>
+                    {/* <ul> */}
+                        {
+                            mainPics.map((mainPic, i)=>{
+                                return (
+                                    
+                                    <div key={i}>
+
+                                        <img src={mainPic.img}/><br/>
+
+                                        <form action={`/mainPics/${mainPic._id}?_method=DELETE`} method='POST'>
+                                            <input type='submit' value='Delete image'/>
+                                        </form>
+
+                                    </div>
+                                )
+                            })
+                        }
+                    {/* </ul> */}
+                </div>
+
+                <div className='carousel-button next'>
+                    <span className='carousel-control-next-icon'></span>
+                </div>
+
             </div>
-            </Carousel>
             </Layout>
         )
     }

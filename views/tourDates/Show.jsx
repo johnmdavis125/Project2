@@ -12,6 +12,7 @@ class Show extends React.Component {
                 <h4>{city}</h4>
 
                 <a href='/tourDates'>Back to Tour Dates</a>
+            
             </div>
         )
     }
