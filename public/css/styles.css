@@ -38,6 +38,7 @@ body {
     width: 100%;
     border-radius: 10px;
     /* display: none;  */
+    margin-bottom: 10px; 
   }
   
   /* .carousel-images img:first-of-type {
@@ -55,3 +56,9 @@ body {
 
   }
   
+  .carousel-container {
+    width: 80%;
+    min-height: 200px; 
+    margin-top: 5%; 
+    margin-left: 8%; 
+  }

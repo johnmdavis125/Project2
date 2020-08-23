@@ -29,7 +29,7 @@ class Index extends React.Component {
             subTitle={headerSubTitle}
             ></Header>
             <div className='carousel-container'>
-            <a href='/mainPics/new'>Add Pictures</a>
+            {/* <a href='/mainPics/new'>Add Pictures</a> */}
 
                 <div className='carousel-button previous'>
                     <span className='carousel-control-prev-icon'></span>
@@ -43,12 +43,15 @@ class Index extends React.Component {
                                     
                                     <div key={i}>
 
-                                        <img src={mainPic.img}/><br/>
-
+                                        <img style={{maxWidth: '900px', minHeight: '200px'}} class='carouselImage' src={mainPic.img}/><br/>
+                                        
+                                        <div class='d-flex justify-content-around'>
                                         <form action={`/mainPics/${mainPic._id}?_method=DELETE`} method='POST'>
-                                            <input type='submit' value='Delete image'/>
+                                            <input class='btn btn-outline-light btn-sm' type='submit' value='Delete Image'/>
                                         </form>
 
+                                        <a class='btn btn-outline-light btn-sm' href='/mainPics/new'>Add Image</a>
+                                        </div>
                                     </div>
                                 )
                             })
