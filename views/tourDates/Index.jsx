@@ -17,7 +17,7 @@ class Index extends React.Component {
                     {
                         tourDates.map((tourDate, i)=>{
                             return (
-                                <div class='card text-center' style={{minWidth: '300px', width: '40%', margin: '5px auto 0 auto', backgroundColor: 'black'}}>
+                                <div class='card text-center' style={{minWidth: '300px', width: '40%', margin: '5px auto 0 auto', backgroundColor: 'black', color: 'white', border: '2px solid gray'}}>
                                 <img class='card-img-top' src={tourDate.img}/>
                                 {/* <div class='card-img-top' style={{backgroundImage: `url(${tourDate.img}`}}>{tourDate.date}</div> */}
                                 <div class='card-body' style={{backgroundColor: 'black', padding: '0'}}>
