@@ -20,16 +20,16 @@ class Index extends React.Component {
                                 <div class='card text-center' style={{minWidth: '300px', width: '40%', margin: '5px auto 0 auto', backgroundColor: 'black'}}>
                                 <img class='card-img-top' src={tourDate.img}/>
                                 {/* <div class='card-img-top' style={{backgroundImage: `url(${tourDate.img}`}}>{tourDate.date}</div> */}
-                                <div class='card-body' style={{backgroundColor: 'black'}}>
-                                    <a class='card-title btn btn-dark btn-sm' href={`tourDates/${tourDate._id}`}>{tourDate.date}</a><br/>
-                                    {/* {tourDate.venue}<br/>
-                                    {tourDate.city}<br/> */}
+                                <div class='card-body' style={{backgroundColor: 'black', padding: '0'}}>
+                                    <p class='card-text' style={{margin: '0'}}>{tourDate.venue}</p>
+                                    <p class='card-text' style={{margin: '0'}}>{tourDate.city}</p>
 
+                                    <a class='card-title btn btn-primary btn-sm' href={`tourDates/${tourDate._id}`}>{tourDate.date}</a><br/>
                                     
 
-                                    {/* <form action={`/tourDates/${tourDate._id}?_method=DELETE`} method='POST'>
-                                        <input type='submit' value='Delete Entry'/>
-                                    </form> */}
+                                    <form action={`/tourDates/${tourDate._id}?_method=DELETE`} method='POST'>
+                                        <input class='btn btn-dark btn-sm' type='submit' value='Delete Entry'/>
+                                    </form>
 
                                     {/* <a href={`/tourDates/${tourDate._id}/edit`}>Edit</a> */}
                                 </div>
@@ -37,7 +37,7 @@ class Index extends React.Component {
                             )
                         })                        
                     }
-                <a href='/tourDates/new'>Add New Date</a>
+                <a style={{marginTop: '20px'}} class='btn btn-light btn-sm' href='/tourDates/new'>Add New Date</a>
             </div>
             
             </Layout>
