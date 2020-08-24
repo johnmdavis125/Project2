@@ -62,3 +62,8 @@ body {
     margin-top: 5%; 
     margin-left: 8%; 
   }
+
+  .audioPlayer {
+    padding: 0 10px 0 10px;
+    height: 20px;  
+  }

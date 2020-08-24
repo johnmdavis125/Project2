@@ -24,7 +24,17 @@ const albumSchema = new Schema({
     song7length: String,
     song8length: String,
     song9length: String,
-    song10length: String
+    song10length: String,
+    song1file: String,
+    song2file: String,
+    song3file: String,
+    song4file: String,
+    song5file: String,
+    song6file: String, 
+    song7file: String,
+    song8file: String,
+    song9file: String,
+    song10file: String
 }, {timestamps: true}
 );
 
