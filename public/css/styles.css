@@ -64,8 +64,9 @@ body {
   }
 
   .audioPlayer {
-    padding: 0 10px 0 10px;
-    height: 20px;  
+    padding: 8px 10px 0 10px;
+    height: 23px;  
+    width: 240px; 
   }
 
   /* .form-control {
