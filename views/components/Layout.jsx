@@ -1,9 +1,5 @@
 const React = require('react'); 
 
-// const layoutStyle = {
-//     backgroundColor: 'black' 
-// }
-
 class Layout extends React.Component {
     render(){
         return (

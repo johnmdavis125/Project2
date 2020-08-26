@@ -1,8 +1,6 @@
 // Dependencies
 require('dotenv').config(); 
 
-// https://stackoverflow.com/questions/21674080/how-to-use-npm-jquery-module
-
 const express = require('express'); 
 const app = express(); 
 const mongoose = require('mongoose'); 
