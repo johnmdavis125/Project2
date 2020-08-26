@@ -27,10 +27,10 @@ Band Builder is a web application designed for an up-and-coming local band to cu
 
 ##### Resources (x3)
 + mainPics (Carousel Images on main page), tourDates, and albums
-  + RESTful Routes per resource
-        + mainPics: Index, New, Delete, Create
-        + tourDates: Index, New, Delete, Update, Create, Edit, Show (x7 - MVP)
-        + albums: Index, New, Delete, Update, Create, Edit
++ RESTful Routes per resource
+    + mainPics: Index, New, Delete, Create
+    + tourDates: Index, New, Delete, Update, Create, Edit, Show (x7 - MVP)
+    + albums: Index, New, Delete, Update, Create, Edit
 
 ##### Components (x2)
 + Layout & Header
